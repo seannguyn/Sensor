@@ -15,10 +15,10 @@
 		37189EEC259D40B00048CD42 /* iot_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189EBF259D40AF0048CD42 /* iot_iosApp.swift */; };
 		37189EED259D40B00048CD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189EC0259D40AF0048CD42 /* ContentView.swift */; };
 		37189EEE259D40B00048CD42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189EC0259D40AF0048CD42 /* ContentView.swift */; };
-		37189EEF259D40B00048CD42 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189EC1259D40AF0048CD42 /* Persistence.swift */; };
-		37189EF0259D40B00048CD42 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189EC1259D40AF0048CD42 /* Persistence.swift */; };
 		37189EF1259D40B00048CD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37189EC2259D40B00048CD42 /* Assets.xcassets */; };
 		37189EF2259D40B00048CD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37189EC2259D40B00048CD42 /* Assets.xcassets */; };
+		37189F0A259D4CDB0048CD42 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189F09259D4CDB0048CD42 /* DataViewModel.swift */; };
+		37189F0B259D4CDB0048CD42 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37189F09259D4CDB0048CD42 /* DataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +42,10 @@
 		37189EBE259D40AF0048CD42 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		37189EBF259D40AF0048CD42 /* iot_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iot_iosApp.swift; sourceTree = "<group>"; };
 		37189EC0259D40AF0048CD42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		37189EC1259D40AF0048CD42 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		37189EC2259D40B00048CD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		37189EC7259D40B00048CD42 /* iot_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iot_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37189EC7259D40B00048CD42 /* Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37189ECA259D40B00048CD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37189ECF259D40B00048CD42 /* iot_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iot_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37189ECF259D40B00048CD42 /* Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37189ED1259D40B00048CD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37189ED2259D40B00048CD42 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		37189ED7259D40B00048CD42 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +54,7 @@
 		37189EE2259D40B00048CD42 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37189EE6259D40B00048CD42 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		37189EE8259D40B00048CD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37189F09259D4CDB0048CD42 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +106,9 @@
 			children = (
 				37189EBF259D40AF0048CD42 /* iot_iosApp.swift */,
 				37189EC0259D40AF0048CD42 /* ContentView.swift */,
-				37189EC1259D40AF0048CD42 /* Persistence.swift */,
 				37189EC2259D40B00048CD42 /* Assets.xcassets */,
 				37189EBD259D40AF0048CD42 /* iot_ios.xcdatamodeld */,
+				37189F09259D4CDB0048CD42 /* DataViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -116,8 +116,8 @@
 		37189EC8259D40B00048CD42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37189EC7259D40B00048CD42 /* iot_ios.app */,
-				37189ECF259D40B00048CD42 /* iot_ios.app */,
+				37189EC7259D40B00048CD42 /* Sensor.app */,
+				37189ECF259D40B00048CD42 /* Sensor.app */,
 				37189ED7259D40B00048CD42 /* Tests iOS.xctest */,
 				37189EE2259D40B00048CD42 /* Tests macOS.xctest */,
 			);
@@ -162,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37189EC6259D40B00048CD42 /* iot_ios (iOS) */ = {
+		37189EC6259D40B00048CD42 /* Sensor (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37189EF5259D40B00048CD42 /* Build configuration list for PBXNativeTarget "iot_ios (iOS)" */;
+			buildConfigurationList = 37189EF5259D40B00048CD42 /* Build configuration list for PBXNativeTarget "Sensor (iOS)" */;
 			buildPhases = (
 				37189EC3259D40B00048CD42 /* Sources */,
 				37189EC4259D40B00048CD42 /* Frameworks */,
@@ -174,14 +174,14 @@
 			);
 			dependencies = (
 			);
-			name = "iot_ios (iOS)";
+			name = "Sensor (iOS)";
 			productName = "iot_ios (iOS)";
-			productReference = 37189EC7259D40B00048CD42 /* iot_ios.app */;
+			productReference = 37189EC7259D40B00048CD42 /* Sensor.app */;
 			productType = "com.apple.product-type.application";
 		};
-		37189ECE259D40B00048CD42 /* iot_ios (macOS) */ = {
+		37189ECE259D40B00048CD42 /* Sensor (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37189EF8259D40B00048CD42 /* Build configuration list for PBXNativeTarget "iot_ios (macOS)" */;
+			buildConfigurationList = 37189EF8259D40B00048CD42 /* Build configuration list for PBXNativeTarget "Sensor (macOS)" */;
 			buildPhases = (
 				37189ECB259D40B00048CD42 /* Sources */,
 				37189ECC259D40B00048CD42 /* Frameworks */,
@@ -191,9 +191,9 @@
 			);
 			dependencies = (
 			);
-			name = "iot_ios (macOS)";
+			name = "Sensor (macOS)";
 			productName = "iot_ios (macOS)";
-			productReference = 37189ECF259D40B00048CD42 /* iot_ios.app */;
+			productReference = 37189ECF259D40B00048CD42 /* Sensor.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37189ED6259D40B00048CD42 /* Tests iOS */ = {
@@ -257,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 37189EBB259D40AF0048CD42 /* Build configuration list for PBXProject "iot_ios" */;
+			buildConfigurationList = 37189EBB259D40AF0048CD42 /* Build configuration list for PBXProject "Sensor" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,8 +270,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37189EC6259D40B00048CD42 /* iot_ios (iOS) */,
-				37189ECE259D40B00048CD42 /* iot_ios (macOS) */,
+				37189EC6259D40B00048CD42 /* Sensor (iOS) */,
+				37189ECE259D40B00048CD42 /* Sensor (macOS) */,
 				37189ED6259D40B00048CD42 /* Tests iOS */,
 				37189EE1259D40B00048CD42 /* Tests macOS */,
 			);
@@ -316,8 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37189F0A259D4CDB0048CD42 /* DataViewModel.swift in Sources */,
 				37189EEB259D40B00048CD42 /* iot_iosApp.swift in Sources */,
-				37189EEF259D40B00048CD42 /* Persistence.swift in Sources */,
 				37189EE9259D40B00048CD42 /* iot_ios.xcdatamodeld in Sources */,
 				37189EED259D40B00048CD42 /* ContentView.swift in Sources */,
 			);
@@ -327,8 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37189F0B259D4CDB0048CD42 /* DataViewModel.swift in Sources */,
 				37189EEC259D40B00048CD42 /* iot_iosApp.swift in Sources */,
-				37189EF0259D40B00048CD42 /* Persistence.swift in Sources */,
 				37189EEA259D40B00048CD42 /* iot_ios.xcdatamodeld in Sources */,
 				37189EEE259D40B00048CD42 /* ContentView.swift in Sources */,
 			);
@@ -355,12 +355,12 @@
 /* Begin PBXTargetDependency section */
 		37189ED9259D40B00048CD42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37189EC6259D40B00048CD42 /* iot_ios (iOS) */;
+			target = 37189EC6259D40B00048CD42 /* Sensor (iOS) */;
 			targetProxy = 37189ED8259D40B00048CD42 /* PBXContainerItemProxy */;
 		};
 		37189EE4259D40B00048CD42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37189ECE259D40B00048CD42 /* iot_ios (macOS) */;
+			target = 37189ECE259D40B00048CD42 /* Sensor (macOS) */;
 			targetProxy = 37189EE3259D40B00048CD42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -491,7 +491,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "playground.iot-ios";
-				PRODUCT_NAME = iot_ios;
+				PRODUCT_NAME = Sensor;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "playground.iot-ios";
-				PRODUCT_NAME = iot_ios;
+				PRODUCT_NAME = Sensor;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,7 +536,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "playground.iot-ios";
-				PRODUCT_NAME = iot_ios;
+				PRODUCT_NAME = Sensor;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -558,7 +558,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "playground.iot-ios";
-				PRODUCT_NAME = iot_ios;
+				PRODUCT_NAME = Sensor;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -652,7 +652,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		37189EBB259D40AF0048CD42 /* Build configuration list for PBXProject "iot_ios" */ = {
+		37189EBB259D40AF0048CD42 /* Build configuration list for PBXProject "Sensor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37189EF3259D40B00048CD42 /* Debug */,
@@ -661,7 +661,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37189EF5259D40B00048CD42 /* Build configuration list for PBXNativeTarget "iot_ios (iOS)" */ = {
+		37189EF5259D40B00048CD42 /* Build configuration list for PBXNativeTarget "Sensor (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37189EF6259D40B00048CD42 /* Debug */,
@@ -670,7 +670,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37189EF8259D40B00048CD42 /* Build configuration list for PBXNativeTarget "iot_ios (macOS)" */ = {
+		37189EF8259D40B00048CD42 /* Build configuration list for PBXNativeTarget "Sensor (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37189EF9259D40B00048CD42 /* Debug */,

@@ -9,72 +9,77 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    
+    @ObservedObject var dataViewModel = DataViewModel()
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        
+        VStack {
+            Group {
+                if dataViewModel.data != nil {
+                    HStack {
+                        Spacer()
+                        
+                        Image(systemName: "thermometer")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 60, height: 60, alignment: .center)
+                            .foregroundColor(Color("TextColorMain"))
+                            .opacity(0.8)
+                            
+                        Text("\(dataViewModel.data!.temperature)°C")
+                            .font(.system(size: 30, design: .rounded))
+                            .foregroundColor(Color("TextColorMain"))
+                        
+                        Spacer()
+                        
+                        Image(systemName: "drop.triangle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 60, height: 60, alignment: .center)
+                            .foregroundColor(Color("TextColorMain"))
+                            .opacity(0.8)
+                        
+                        Text("\(dataViewModel.data!.humidity)%")
+                            .font(.system(size: 30, design: .rounded))
+                            .foregroundColor(Color("TextColorMain"))
+                        
+                        Spacer()
+                    }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 100, alignment: .center)
+                    
+                    HStack {
+                        Text("Connected")
+                            .foregroundColor(Color("TextColorBlue"))
+                            .font(.system(size: 16, design: .rounded))
+                    }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 20, alignment: .center)
+                    
+                    HStack {
+                        Text("Last Updated: \(dataViewModel.data!.timestamp)")
+                            .foregroundColor(Color("TextColorSubheading")).opacity(0.3)
+                            .font(.system(size: 16, design: .rounded))
+                    }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 20, alignment: .center)
+                }
+                else {
+                    Text("Loading..")
+                }
             }
-            .onDelete(perform: deleteItems)
         }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color("StartColor"), Color("EndColor")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }
